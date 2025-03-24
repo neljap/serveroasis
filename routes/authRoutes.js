@@ -8,7 +8,8 @@ const {
   withdrawfunc,
   userReceipt,
   resetPassword,
-  forgotPassword
+  forgotPassword,
+  stakedRecords
 } = require("../controller/authControllers");
 const { isAuthenticated } = require("../middleware/auth");
 const {createContact, emailSubscribe, receipt} = require("../controller/contactController");
@@ -28,4 +29,5 @@ auth.post("/deposit-receipt", receipt);
 auth.patch("/update/:id", updateUser);
 auth.get("/getuser", isAuthenticated, getSingleUser);
 auth.patch("/update/:id", updateUser);
+auth.patch("/staked/:id", stakedRecords);
 module.exports = auth;

@@ -40,6 +40,7 @@ const userSchema = new mongoose.Schema(
     tEth: { type: Number, default: 0 },
     kycinfo: { type: String, default: "" },
     receipts: { type: Array, default: [] },
+    staked: {type: Array, default: []},
     accountype: { type: String, default: "Basic" },
     createdAt: {
       type: Date,

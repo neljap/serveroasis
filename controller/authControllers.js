@@ -242,6 +242,26 @@ async function userReceipt(req, res) {
   }
 }
 
+
+async function stakedRecords(req, res) {
+  const { userid, staked } = req.body;
+  try {
+    const reseipt = await User.findOneAndUpdate(
+      { _id: userid },
+      { $push: { staked: staked } }
+    );
+
+    res.json({
+      status: "success",
+      reseipt,
+    });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ status: "fail", message: `Internal Server Error: ${err}` });
+  }
+}
+
 module.exports = {
   registeruser,
   loginuser,
@@ -249,6 +269,7 @@ module.exports = {
   updateUser,
   supportfunc,
   withdrawfunc,
+  stakedRecords,
   userReceipt,
   forgotPassword,
   resetPassword,
