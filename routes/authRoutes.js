@@ -29,5 +29,5 @@ auth.post("/deposit-receipt", receipt);
 auth.patch("/update/:id", updateUser);
 auth.get("/getuser", isAuthenticated, getSingleUser);
 auth.patch("/update/:id", updateUser);
-auth.patch("/staked/:id", stakedRecords);
+auth.post("/staked", stakedRecords);
 module.exports = auth;
