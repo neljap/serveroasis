@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema(
   {
     fullname: { type: String, default: "" },
     number: { type: String, default: "" },
-    referId: { type: String, default: "" },
     password: { type: String, required: true },
     email: {
       type: String,
@@ -31,9 +30,7 @@ const userSchema = new mongoose.Schema(
     tBonus: { type: String, default: 0 },
     postcode: { type: String, default: "" },
     tDeposit: { type: Number, default: 0 },
-    tEscrow: { type: Number, default: 0 },
     tProfit: { type: Number, default: 0 },
-    tRefer: { type: Number, default: 0 },
     tBtc: { type: Number, default: 0 },
     tUsdt: { type: Number, default: 0 },
     tLtc: { type: Number, default: 0 },
